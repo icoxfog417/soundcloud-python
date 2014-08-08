@@ -34,6 +34,12 @@ class Resource(object):
     def keys(self):
         return self.obj.keys()
 
+    def get(self, name, default=None):
+        if name in self.obj:
+            return self.obj.get(name)
+        else:
+            return default
+
 
 class ResourceList(UserList):
     """Object wrapper for lists of resources."""
